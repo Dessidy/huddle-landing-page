@@ -1,0 +1,230 @@
+/* imported fonts */
+@font-face {
+    font-family: p-small;
+    src: url(Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: p-big;
+    src: url(Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: open_san;
+    src: url(OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+/* ===================================================================== */
+
+/* root variables */
+:root {
+    /* colors */
+    --clr-bg: hsl(257, 40%, 49%);
+    --clr-highlight: hsl(300, 69%, 71%);
+    --clr-white: #fff;
+
+    /* font weight */
+    --fw-huddle: 400;
+
+    /* font family */
+    --ff-p-small: p-small;
+    --ff-p-big: p-big;
+    --ff-open-san: open_san;
+}
+
+/* ====================================================================== */
+
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+	padding: 0;
+	-moz-box-sizing-: border box;
+	-webkit-box-sizing-: border box;
+	box-sizing: border box;
+	word-wrap: break-word;		
+}
+
+img {
+	min-width: 100%;
+	display: block;
+}
+
+/* =========================================================================== */
+
+/* Main containers*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    background: var(--clr-bg);
+    color: var(--clr-white);
+    background-image: url(bg-mobile.svg);
+    background-repeat: no-repeat;
+
+    font-family: var(--ff-p-small);
+}
+
+.huddle_container {
+    display: grid;
+    gap: 3rem;
+    min-height: 100vh;
+
+    padding: 2rem;
+}
+
+/* ============================================================ */
+
+/* heading section */
+.img_container {
+    width: 50%;
+}
+
+.huddle_svg {
+    width: 100%;
+}
+
+/* ===================== */
+
+/* image section */
+
+.main_image {
+    width: 100%;
+}
+
+/* ============================ */
+
+/* about section */
+.about_section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.about_section .title {
+    font-family: var(--ff-p-big);
+    font-size: 2rem;
+}
+
+.about_section .comment {
+    font-family: var(--ff-open-san);
+    font-weight: var(--fw-huddle);
+    margin-top: 1.5rem;
+}
+
+.about_section .btn_container {
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.about_section .btn {
+    background: var(--clr-white);
+    
+    text-decoration: none;
+    padding: 1rem 7rem;
+    cursor: pointer;
+
+    border-radius: 2rem;
+    transition: all ease-in-out 250ms;
+}
+
+.about_section .btn:hover {
+    background: var(--clr-highlight);
+    color: var(--clr-white);
+    box-shadow: 0px .2rem 2rem var(--clr-highlight);
+}
+
+/* ===================================== */
+
+/* logo section */
+.social_icon_section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social_icon_section .icon {
+    display: inline-flex;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.social_icon_section .icon:hover {
+    color: var(--clr-highlight);
+    border: 1px solid var(--clr-highlight);
+    box-shadow: 0px .2rem 2rem var(--clr-highlight);
+}
+
+/* ==================================================== */
+
+/* Media querys */
+@media (min-width: 400px) {
+    body {
+        background-image: url(bg-desktop.svg);
+        background-position: left 0vw top 0vh;
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        background-image: url(bg-desktop.svg);
+        background-position: left -5.5vw  top -8vh;
+        
+    }
+
+    /* Heading section */
+    .img_container {
+        width: 15%;
+    }
+    
+
+    /* image and about section */
+    .media_flex_row {
+        display: flex;
+    }
+
+    .main_img_container {
+        width: 100vmin;
+    }
+
+    .main_img_container {
+        min-width: 250px;
+    }
+
+    .about_section {
+        padding: 0 3rem ;
+        text-align: left;
+    }
+
+    .about_section .title {
+        font-size: 6vh;
+    }
+
+    .about_section .btn_container {
+        margin-top: 3rem;
+    }
+
+    .about_section .btn {
+        padding: 1rem 4rem;
+    }
+
+
+    .social_icon_section {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 2rem;
+    }
+
+}
